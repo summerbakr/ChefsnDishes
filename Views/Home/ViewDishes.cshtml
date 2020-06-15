@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All Dishes!</title>
+
+</head>
+<body>
+    @model List<Dish>
+    <h1>Check out our roster of dishes!</h1>
+    <table>
+        <thead>
+            <th>Name</th>
+            <th>Chef</th>
+            <th>Tastiness</th>
+            <th>Calories</th>
+        </thead>
+        <tbody>
+
+            @foreach (Dish d in @ViewBag.AllDishes)
+            {<tr>
+                <td>@d.Name</td>
+                <td>@d.DishCreator.FirstName @d.DishCreator.LastName</td>
+                <td>@d.Tastiness</td>
+                <td>@d.Calories</td>
+            </tr>
+            }
+            
+        </tbody>
+    </table>
+    <h1><a href="/newchef">Add Chef</a> | <a href="/newdish">Add Dish</a></h1>
+
+    
+</body>
+</html>

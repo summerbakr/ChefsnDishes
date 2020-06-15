@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add a Chef!</title>
+</head>
+<body>
+@model Dish
+    <form method="post" action="/processdish">
+    <p>Dish Name:
+    <input asp-for="Name"/>
+    <span style="color:red;" asp-validation-for="Name"></span></p>
+    
+    <p>Calories Dish Contains:<input asp-for="Calories"/>
+    <span style="color:red;" asp-validation-for="Calories"></span></p>
+    
+    <p>Description:<input asp-for="Description"/>
+    <span style="color:red;" asp-validation-for="Description"></span></p>
+    
+    <p>Tastiness:<input asp-for="Tastiness"/>
+    <span style="color:red;" asp-validation-for="Tastiness"></span></p>
+
+    <p>Chef:
+        <select name="ChefId">
+            @foreach(Chef c in ViewBag.Chefs)
+            {
+                <option value="@c.ChefId">@c.FirstName @c.LastName</option>
+            }
+        </select>
+    </p>
+    
+    <input type="Submit" value="Add Dish!"/>
+    </form>
+    
+</body>
+</html>

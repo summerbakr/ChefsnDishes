@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add a Chef!</title>
+</head>
+<body>
+@model Chef
+    <form method="post" action="/processchef">
+    <p>First Name:
+    <input asp-for="FirstName"/>
+    <span style="color:red;" asp-validation-for="FirstName"></span></p>
+    
+    <p>Last Name:<input asp-for="LastName"/>
+    <span style="color:red;" asp-validation-for="LastName"></span></p>
+    
+    <p>Date of Birth:<input asp-for="DOB"/>
+    <span style="color:red;" asp-validation-for="DOB"></span></p>
+    <input type="Submit" value="Add Chef!"/>
+    </form>
+    
+</body>
+</html>
